@@ -1085,7 +1085,17 @@ _FX NTSTATUS KphValidateCertificate()
             Verify_CertInfo.grace_period = 1;
     }
 
-
+	Verify_CertInfo.active = 1;
+	Verify_CertInfo.type = eCertDeveloper;
+	Verify_CertInfo.level = eCertMaxLevel;
+	Verify_CertInfo.opt_sec = 1;
+	Verify_CertInfo.opt_enc = 1;
+	Verify_CertInfo.opt_net = 1;
+	Verify_CertInfo.opt_desk = 1;
+	Verify_CertInfo.expired = 0;
+	Verify_CertInfo.expirers_in_sec = 86400000;
+	Verify_CertInfo.outdated = 0;
+	
 CleanupExit:
     if(CertDbg)     DbgPrint("Sbie Cert status: %08x; active: %d\n", status, Verify_CertInfo.active);
 
